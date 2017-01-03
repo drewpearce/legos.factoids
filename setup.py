@@ -15,9 +15,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from setuptools import setup, find_packages
-description = 'A lego that grabs a single random line from a provided file and '
-             'returns it to Legobot for handling when it spots the words '
-             '"encourage me" in a message'
+description = 'A lego that grabs a single random line from a provided file '\
+              'and returns it to Legobot for handling when it spots the '\
+              'words "encourage me" in a message'
 name = 'legos.couragewolf'
 setup(
     name=name,
