@@ -4,12 +4,3 @@ python:
 script:
 - flake8 .
 - bandit -r .
-deploy:
-  provider: pypi
-  user: briggsb
-  password:
-    secure: cLcEXSi0Gj1mjv2hIIor8IYauLF4VEn686VVIj8zF+JfQbmA0vFR42wClZfLClvLW8RVw6BDu9DsZ7qR+xEtIrBRIK2M51MzoYLhwVRWnxMZS3H2a4TiNBxU0cRTJgeOgimFLjVB15+sQ68/3FNGUgfxTkEsLmvsYR8Tz61b74LXrVEI3NJulUYgoSqNXj31Z0D0IGQDCfwOKyYOupV/zmeLtN/YoaW9Yzvw25ma7+eyp/aAq0PobHgmwt1aJ0sRHPw9YOEbbyaNMt/jLuPxJxmmKlV+1uxJWQEEJ+JAq96j7Amhn+sBPPts0teQonWwLCv9BZIHdr6JO2rh1972tNZGNJbCUkknlJ7YYRPmWsI8Or/GK6q/5AJ/pb3DlgcJNzNnCDBhRNau2rstI4Jl6qN90I7GotFqjki4myID+EWbdHP4sAlkTSb+q7hRYqrY2B9PUxEBMaYPtqMAhkFqgDe6/leYD/Y2/2/9y12vQk3ulYcY1iqooI+xjXkUedtxQCv3C6N6tdNOYvMzragyzpOIuL/w9pZTRxiSv+NETnR3jHfWZ5c+ZMDOsyH2uWuOUjnouvkDtj183THLElhLoaw8ODXF1+/cWue0vv0OUjKA77bSuCtvPqnH0nqBK4QfjVjfvOzgcYi71nJaqaxQaR03nbwG5wgyJG93zK1Y0hQ=
-  on:
-    tags: true
-    distributions: sdist bdist_wheel
-    repo: bbriggs/legos.couragewolf

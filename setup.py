@@ -1,5 +1,5 @@
 # Legos, A namespace package for distribution of Legobot plugins
-# Copyright (C) 2017  Brenton Briggs II
+# Copyright (C) 2017  Drew Pearce and Brenton Briggs II
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,16 +17,17 @@
 from setuptools import setup, find_packages
 description = 'A lego that grabs a single random line from a provided file '\
               'and returns it to Legobot for handling when it spots the '\
-              'words "encourage me" in a message'
-name = 'legos.couragewolf'
+              'words in a message that match a list of triggers in a '\
+              'provided file.'
+name = 'legos.factoids'
 setup(
     name=name,
     version='0.1.0',
     namespace_packages=name.split('.')[:-1],
     license='GPLv3',
     description=description,
-    author='Brenton Briggs II',
-    url='https://github.com/bbriggs/' + name,
+    author='Drew Pearce',
+    url='https://github.com/drewpearce/' + name,
     install_requires=['legobot>=1.0.1'],
     classifiers=[
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
