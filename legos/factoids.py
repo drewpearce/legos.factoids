@@ -45,6 +45,6 @@ class Factoids(Lego):
 
     def get_all_responses(self, infile):
         with open(infile, 'r') as f:
-            content = f.readlines()
+            content = f.read().splitlines()
         logger.info(content)
         return content
