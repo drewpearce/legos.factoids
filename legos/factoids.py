@@ -13,7 +13,7 @@ class Factoids(Lego):
         return
 
     def listening_for(self, message):
-        if 'encourage me' in message['text']:
+        if 'trigger words' in message['text']:
             logger.info('Lego %s activated' % self.get_name())
             return True
 
@@ -33,9 +33,8 @@ class Factoids(Lego):
         return 'factoid'
 
     def get_help(self):
-        help_text = "Helpful motivational quotes "\
-                    "from influential figures such as Shia LeBouf, "\
-                    "Courage Wolf, and your drill sergeant."
+        help_text = "Returns random response from supplied list in response "\
+                    "to triggers from supplied list of trigger."
         return help_text
 
     def get_single_response(self, responses):
