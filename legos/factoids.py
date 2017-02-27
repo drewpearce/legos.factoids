@@ -9,13 +9,16 @@ class Factoids(Lego):
     def __init__(self, baseplate, lock, triggers, responses, *args, **kwargs):
         super().__init__(baseplate, lock)
 
+        self.t = triggers
         self.r = responses
         return
 
     def listening_for(self, message):
-        if 'trigger words' in message['text']:
-            logger.info('Lego %s activated' % self.get_name())
-            return True
+        triggers_list = self.get_all_file_items(self.t)
+        for trigger in triggers_list:
+            if trigger in message['text']:
+                logger.info('Lego %s activated' % self.get_name())
+                return True
 
     def handle(self, message):
         opts = None
