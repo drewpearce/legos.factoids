@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 class Factoids(Lego):
-    def __init__(self, baseplate, lock, responses, *args, **kwargs):
+    def __init__(self, baseplate, lock, triggers, responses, *args, **kwargs):
         super().__init__(baseplate, lock)
 
         self.r = responses
@@ -26,7 +26,7 @@ class Factoids(Lego):
         except IndexError:
             logger.error('Could not identify message source in message: %s'
                          % str(message))
-        txt = self.get_single_response(self.get_all_responses(self.r))
+        txt = self.get_single_response(self.get_all_file_items(self.r))
         self.reply(message, txt, opts)
 
     def get_name(self):
@@ -43,7 +43,7 @@ class Factoids(Lego):
         logger.info(response)
         return response
 
-    def get_all_responses(self, infile):
+    def get_all_file_items(self, infile):
         with open(infile, 'r') as f:
             content = f.read().splitlines()
         logger.info(content)
