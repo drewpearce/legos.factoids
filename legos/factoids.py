@@ -17,7 +17,7 @@ class Factoids(Lego):
         triggers_list = self.get_all_file_items(self.t)
         for trigger in triggers_list:
             if trigger in message['text']:
-                logger.info('Lego %s activated' % self.get_name())
+                logger.info('Lego {} activated'.format(self.get_name()))
                 return True
 
     def handle(self, message):
@@ -27,8 +27,8 @@ class Factoids(Lego):
             target = message['metadata']['source_channel']
             opts = {'target': target}
         except IndexError:
-            logger.error('Could not identify message source in message: %s'
-                         % str(message))
+            logger.error('''Could not identify message source in message:
+                        {}'''.format(str(message)))
         txt = self.get_single_response(self.get_all_file_items(self.r))
         self.reply(message, txt, opts)
 
@@ -37,7 +37,7 @@ class Factoids(Lego):
 
     def get_help(self):
         help_text = "Returns random response from supplied list in response "\
-                    "to triggers from supplied list of trigger."
+                    "to triggers from supplied list of triggers."
         return help_text
 
     def get_single_response(self, responses):
